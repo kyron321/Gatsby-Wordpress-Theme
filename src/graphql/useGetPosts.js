@@ -7,9 +7,15 @@ const useGetPosts = () => {
       posts {
         nodes {
           title
-          date
           databaseId
+          date
+          content
           slug
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
         }
       }
     }
@@ -20,3 +26,4 @@ const useGetPosts = () => {
 };
 
 export default useGetPosts;
+
