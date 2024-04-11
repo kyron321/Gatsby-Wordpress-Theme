@@ -11,7 +11,7 @@ const HomePage = () => {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-<h2><Link to={`/post/${post.databaseId}`}>{post.title}</Link></h2>
+<h2><Link to={`/post/${post.slug}`}>{post.title}</Link></h2>
             <p>{post.date}</p>
           </li>
         ))}

@@ -3,11 +3,10 @@ import { graphql } from "gatsby";
 
 // This is the GraphQL query that fetches the data for a single post
 export const query = graphql`
-  query GetPost($id: ID!) {
+  query GetPost($slug: String!) {
     wpcontent {
-      post(id: $id, idType: DATABASE_ID) {
+      postBy(slug: $slug) {
         title
-        date
         content
       }
     }
@@ -17,7 +16,7 @@ export const query = graphql`
 // This is the React component that displays the data for a single post
 const PostTemplate = ({ data }) => {
     console.log(data);
-  const post = data.wpcontent.post;
+  const post = data.wpcontent.postBy; // Changed from data.wpcontent.post
 
   return (
     <div>

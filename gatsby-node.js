@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql }) => {
       wpcontent {
         posts {
           nodes {
-            databaseId
+            slug
           }
         }
       }
@@ -21,21 +21,13 @@ exports.createPages = async ({ actions, graphql }) => {
   }
 
   // Create a page for each post
-  result.data.wpcontent.posts.nodes.forEach(node => {
-    createPage({
-      path: `/post/${node.databaseId}`,
-      component: require.resolve("./src/templates/post.js"),
-      context: {
-        id: node.databaseId,
-      },
-    });
-  });
-
-  // Create the existing page
+result.data.wpcontent.posts.nodes.forEach(node => {
   createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+    path: `/post/${node.slug}`,
+    component: require.resolve("./src/templates/post.js"),
+    context: {
+      slug: node.slug,
+    },
   });
-};
+});
+}
