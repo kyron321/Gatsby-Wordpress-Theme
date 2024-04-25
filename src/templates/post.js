@@ -10,6 +10,7 @@ export const query = graphql`
       postBy(slug: $slug) {
         title
         content
+        excerpt
       }
     }
   }
