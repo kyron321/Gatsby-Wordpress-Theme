@@ -1,7 +1,7 @@
 // src/pages/index.js
 
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import FrontPage from '../components/FrontPage';
 import NewsPage from '../components/NewsPage';
 
