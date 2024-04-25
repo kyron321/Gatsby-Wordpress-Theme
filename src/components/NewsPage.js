@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import useGetPosts from '../graphql/useGetPosts';
 
-const HomePage = () => {
+const NewsPage = () => {
   const posts = useGetPosts();
 
   return (
@@ -21,4 +21,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default NewsPage;
