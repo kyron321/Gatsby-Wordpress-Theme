@@ -26,6 +26,7 @@ module.exports = {
       resolve: `gatsby-plugin-fastify`,
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

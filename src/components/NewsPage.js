@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import useGetPosts from '../graphql/useGetPosts';
 
 const NewsPage = () => {
@@ -13,7 +14,9 @@ const NewsPage = () => {
           <li key={post.id}>
             <h2><Link to={`/post/${post.slug}`}>{post.title}</Link></h2>
             <p>{post.date}</p>
-            {post.featuredImage && post.featuredImage.node && <img src={post.featuredImage.node.mediaItemUrl} alt={post.title} />}
+            {post.featuredImage && post.featuredImage.node && (
+              <GatsbyImage image={getImage(post.featuredImage.node)} alt={post.title} />
+            )}
           </li>
         ))}
       </ul>
