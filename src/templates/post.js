@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 
 // This is the GraphQL query that fetches the data for a single post
 export const query = graphql`
