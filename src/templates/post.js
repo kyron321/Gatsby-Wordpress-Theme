@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import { Helmet } from "react-helmet";
 
 // This is the GraphQL query that fetches the data for a single post
 export const query = graphql`
@@ -16,14 +17,17 @@ export const query = graphql`
 
 // This is the React component that displays the data for a single post
 const PostTemplate = ({ data }) => {
-  const post = data.wpcontent.postBy; // Changed from data.wpcontent.post
+  const post = data.wpcontent.postBy;
 
   return (
     <Layout>
-    <div>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+      <Helmet>
+        <title>{post.title}</title>
+      </Helmet>
+      <div>
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </div>
     </Layout>
   );
 };
