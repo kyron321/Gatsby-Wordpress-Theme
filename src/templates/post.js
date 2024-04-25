@@ -23,6 +23,7 @@ const PostTemplate = ({ data }) => {
     <Layout>
       <Helmet>
         <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
       </Helmet>
       <div>
         <h1>{post.title}</h1>
