@@ -43,7 +43,7 @@ module.exports = {
       options: {
         typeName: 'WordPress',
         fieldName: 'wpcontent',
-        url: 'http://headless-gatsby.local/graphql', // Replace with your WordPress GraphQL endpoint
+        url: 'https://gatsbytemplate.wpenginepowered.com/graphql', // Replace with your WordPress GraphQL endpoint
       },
     },
     'gatsby-plugin-image',
