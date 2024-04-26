@@ -2,7 +2,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   // Fetch the posts using a GraphQL query
-  const result = await graphql(`
+  const resultPosts = await graphql(`
     query GetPosts {
       wpcontent {
         posts {
@@ -15,19 +15,50 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   // Check if there are any errors in the query
-  if (result.errors) {
-    console.error(result.errors);
+  if (resultPosts.errors) {
+    console.error(resultPosts.errors);
     throw new Error('Failed to fetch posts');
   }
 
   // Create a page for each post
-result.data.wpcontent.posts.nodes.forEach(node => {
-  createPage({
-    path: `/post/${node.slug}`,
-    component: require.resolve("./src/templates/post.js"),
-    context: {
-      slug: node.slug,
-    },
+  resultPosts.data.wpcontent.posts.nodes.forEach(node => {
+    createPage({
+      path: `/post/${node.slug}`,
+      component: require.resolve("./src/templates/post.js"),
+      context: {
+        slug: node.slug,
+      },
+    });
   });
+
+ // Fetch the pages using a GraphQL query
+const resultPages = await graphql(`
+query GetPages {
+  wpcontent {
+    pages {
+      nodes {
+        id
+        slug
+      }
+    }
+  }
+}
+`);
+
+// Check if there are any errors in the query
+if (resultPages.errors) {
+console.error(resultPages.errors);
+throw new Error('Failed to fetch pages');
+}
+
+// Create a page for each page
+resultPages.data.wpcontent.pages.nodes.forEach(node => {
+createPage({
+  path: `/${node.slug}`,
+  component: require.resolve("./src/templates/page.js"),
+  context: {
+    id: node.id,
+  },
+});
 });
 }
