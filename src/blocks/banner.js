@@ -1,4 +1,5 @@
 import * as React from "react"
+import "../scss/blocks/banner.scss"
 
 const Banner = ({ attribs, children }) => {
   const imgElement = children.find(child => child.type === 'img');
@@ -9,9 +10,9 @@ const Banner = ({ attribs, children }) => {
   const h1Text = h1Element ? h1Element.props.children : '';
 
   return (
-    <section className="banner">
-      <h1>{h1Text}</h1>
-      <img src={imgSrc} alt={imgAlt} />
+    <section className="banner-container">
+      <h1 className="banner-heading">{h1Text}</h1>
+      <img className="banner-image" src={imgSrc} alt={imgAlt} />
     </section>
   );
 }
