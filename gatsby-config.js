@@ -7,6 +7,10 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -48,7 +52,7 @@ module.exports = {
       options: {
         typeName: 'WordPress',
         fieldName: 'wpcontent',
-        url: 'https://gatsbytemplate.wpenginepowered.com/graphql', // Replace with your WordPress GraphQL endpoint
+        url: process.env.GATSBY_API_URL, // Use environment variable
       },
     },
     'gatsby-plugin-image',
