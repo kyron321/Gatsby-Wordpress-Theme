@@ -8,6 +8,23 @@
 }
 
 .header-inner{
+    display: flex;
+    justify-content: space-between;
     padding-top: 3rem;
     padding-bottom: 3rem;
+}
+
+.header-nav{
+    display: flex;
+}
+
+.menu-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item{
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
