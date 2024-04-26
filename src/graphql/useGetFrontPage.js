@@ -7,14 +7,8 @@ const useGetFrontPage = () => {
       pages {
         nodes {
           isFrontPage
-          blockBanner {
-            bannerImage {
-              node {
-                sourceUrl
-                altText
-              }
-            }
-          }
+          title
+          content
         }
       }
     }

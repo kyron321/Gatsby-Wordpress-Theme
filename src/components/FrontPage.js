@@ -9,7 +9,6 @@ const FrontPage = () => {
   
     return (
       <div>
-        <h1>{data.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.content }} />
       </div>
     );
