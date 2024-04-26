@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "../scss/base/typography.scss"
+import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +25,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" as="style" />
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <footer>
