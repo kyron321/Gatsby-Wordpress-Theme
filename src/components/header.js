@@ -1,13 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import useGetWebsiteOptions from "../graphql/useGetWebsiteOptions"
+import useGetMenuItems from "../graphql/useGetMenuItems";
+import menu from './menu/menu';
 import '../scss/header.scss';
 
 const Header = ({ siteTitle }) => (
-  <header class="header-container">
-    <div class="header-inner">
+  <header className="header-container">
+    <div className="header-inner">
     <Link to="/">
-      <img class="logo" src={useGetWebsiteOptions().siteLogo.node.sourceUrl} alt={useGetWebsiteOptions().siteLogo.node.altText}/>
+      <img className="logo" src={useGetWebsiteOptions().siteLogo.node.sourceUrl} alt={useGetWebsiteOptions().siteLogo.node.altText}/>
     </Link>
     </div>
   </header>

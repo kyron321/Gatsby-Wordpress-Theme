@@ -9,8 +9,8 @@ const NewsPage = () => {
     <div>
       <h1>Latest Posts</h1>
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
+      {posts.map((post, index) => (
+          <li key={post.id || index}>
             <h2><Link to={`/post/${post.slug}`}>{post.title}</Link></h2>
             <p>{post.date}</p>
             {post.featuredImage && post.featuredImage.node && <img src={post.featuredImage.node.mediaItemUrl} alt={post.title} />}
