@@ -2,6 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import { Helmet } from "react-helmet";
+import parse, { domToReact } from 'html-react-parser';
+import Banner from '../blocks/banner';
+import TwoColumnImage from "../blocks/two-column-image";
+import * as blocks from '../blocks/map';
 
 // This is the GraphQL query that fetches the data for a single page
 export const query = graphql`
@@ -15,9 +19,25 @@ export const query = graphql`
   }
 `;
 
-// This is the React component that displays the data for a single page
 const PageTemplate = ({ data }) => {
   const page = data.wpcontent.page;
+  
+  const blockComponents = {
+    'register-wordpress-banner-block': Banner,
+    'register-wordpress-two-column-image-block': TwoColumnImage,
+    // Add more mappings for other block types
+  };
+  
+  const options = {
+    replace: ({ attribs, children }) => {
+      if (!attribs) return;
+  
+      const BlockComponent = blockComponents[attribs.id];
+      if (BlockComponent) {
+        return <BlockComponent>{domToReact(children, options)}</BlockComponent>;
+      }
+    },
+  };
 
   return (
     <Layout>
@@ -26,7 +46,7 @@ const PageTemplate = ({ data }) => {
       </Helmet>
       <div>
         <h1>{page.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+        {typeof page.content === 'string' ? parse(page.content, options) : null}
       </div>
     </Layout>
   );
