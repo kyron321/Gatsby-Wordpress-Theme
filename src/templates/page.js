@@ -43,6 +43,7 @@ const PageTemplate = ({ data }) => {
     <Layout>
       <Helmet>
         <title>{page.title}</title>
+        <meta name="description" content={page.title}/>
       </Helmet>
       <div>
         {typeof page.content === 'string' ? parse(page.content, options) : null}
