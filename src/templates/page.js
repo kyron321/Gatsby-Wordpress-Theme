@@ -34,7 +34,7 @@ const PageTemplate = ({ data }) => {
   
       const BlockComponent = blockComponents[attribs.id];
       if (BlockComponent) {
-        return <BlockComponent>{domToReact(children, options)}</BlockComponent>;
+        return <BlockComponent attribs={attribs} children={domToReact(children, options)} />;
       }
     },
   };
@@ -45,7 +45,6 @@ const PageTemplate = ({ data }) => {
         <title>{page.title}</title>
       </Helmet>
       <div>
-        <h1>{page.title}</h1>
         {typeof page.content === 'string' ? parse(page.content, options) : null}
       </div>
     </Layout>
