@@ -4,7 +4,6 @@ import useGetFrontPage from '../graphql/useGetFrontPage';
 
 const FrontPage = () => {
     const data = useGetFrontPage();
-    console.log(data);
   
     // Find the object where isFrontPage is true
     const frontPageObject = data.find(item => item.isFrontPage);
