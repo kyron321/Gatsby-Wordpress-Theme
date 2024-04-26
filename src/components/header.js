@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import useGetWebsiteOptions from "../graphql/useGetWebsiteOptions"
 import useGetMenuItems from "../graphql/useGetMenuItems";
-import menu from './menu/menu';
+import Menu from './menu/menu';
 import '../scss/header.scss';
 
 const Header = ({ siteTitle }) => (
@@ -11,6 +11,7 @@ const Header = ({ siteTitle }) => (
     <Link to="/">
       <img className="logo" src={useGetWebsiteOptions().siteLogo.node.sourceUrl} alt={useGetWebsiteOptions().siteLogo.node.altText}/>
     </Link>
+    <Menu />
     </div>
   </header>
 )
