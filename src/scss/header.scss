@@ -1,10 +1,12 @@
+@import './base/colors.scss';
+
 .header-container{
+    background-color: $primary-color;
     margin-right: auto;
     margin-left: auto;
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
-    max-width: 1440px;
 }
 
 .header-inner{
@@ -12,6 +14,8 @@
     justify-content: space-between;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    margin: auto;
+    max-width: 1400px;
 }
 
 .logo{
@@ -25,6 +29,7 @@
 }
 
 .menu-items{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,4 +38,11 @@
 .menu-item{
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.menu-item a{
+    color: $text-color-light;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
 }

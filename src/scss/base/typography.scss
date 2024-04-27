@@ -1,9 +1,14 @@
 @import 'colors';
+@import '../base/media-queries.scss';
 
 @font-face {
   font-family: 'Manrope';
   src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
   font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html{
@@ -69,4 +74,38 @@ a:hover {
 
 ul {
     list-style-type: none;
+}
+
+@media (max-width: $mobile) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
 }
