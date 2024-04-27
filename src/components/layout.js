@@ -30,10 +30,7 @@ const Layout = ({ children }) => {
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main>{children}</main>
-        <footer>
-          footer
-        </footer>
+        <main className="main-container">{children}</main>
     </>
   )
 }

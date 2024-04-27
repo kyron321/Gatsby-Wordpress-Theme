@@ -1,3 +1,5 @@
+@import '../base/media-queries';
+
 .banner-container{
     position: relative;
     height: 100%;
@@ -13,9 +15,22 @@
     }
 
     .banner-heading{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+        position: absolute;
+        display: flex;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: $mobile){
+    .banner-container{
+        min-height: 320px;
+    }
+    .banner-image{
+        min-height: 320px;
     }
 }

@@ -6,12 +6,20 @@
   font-display: swap;
 }
 
+html{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body {
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: $text-color;
   margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
