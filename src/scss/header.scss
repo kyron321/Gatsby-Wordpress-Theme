@@ -46,3 +46,15 @@
     font-weight: 600;
     text-decoration: none;
 }
+
+.header-container {
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  
+    &.scrolled {
+      background-color: $primary-color-darker;
+      box-shadow: 2rem rgba(0, 0, 0, 0.6)
+    }
+  }

@@ -68,9 +68,12 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: $secondary-color;
-  text-decoration: underline;
+a {
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
 }
 
 ul {
