@@ -16,17 +16,22 @@ header{
 .header-inner{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin: auto;
     max-width: 1400px;
 }
 
-.logo{
-    height: fit-content;
+.logo-link {
+    display: block;
+  }
+
+  .logo {
+    height: auto;
     max-height: 8rem;
     width: 100%;
-}
+  }
 
 .header-nav{
     display: flex;

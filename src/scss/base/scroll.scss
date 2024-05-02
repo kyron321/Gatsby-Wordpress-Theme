@@ -1,0 +1,21 @@
+
+@import 'colors';
+
+* {
+    scrollbar-width: 1rem;
+    scrollbar-color: $secondary-color $body-color 0.7;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.7);
+    border-radius: 2rem;
+    border: transparent;
+  }

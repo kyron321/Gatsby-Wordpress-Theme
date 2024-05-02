@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import "../scss/base/typography.scss"
+import "../scss/base/scroll.scss"
 import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
