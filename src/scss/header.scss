@@ -1,5 +1,9 @@
 @import './base/colors.scss';
 
+header{
+    z-index: 999;
+}
+
 .header-container{
     background-color: $primary-color;
     margin-right: auto;
