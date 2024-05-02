@@ -6,7 +6,6 @@ const useGetWebsiteOptions = () => {
     wpcontent {
       siteOptions {
         websiteOptions {
-          email
           siteLogo {
             node {
               altText

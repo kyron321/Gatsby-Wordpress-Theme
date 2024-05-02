@@ -9,6 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "../scss/base/typography.scss"
 import { Helmet } from "react-helmet"
 
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main className="main-container">{children}</main>
+      <Footer />  
     </>
   )
 }

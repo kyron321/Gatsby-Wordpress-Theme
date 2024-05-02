@@ -1,0 +1,32 @@
+@import './base/colors.scss';
+
+.footer-container{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: $primary-color-darker;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: auto;
+    max-width: 1400px;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $text-color;
+    transition: fill 0.15s;
+
+    &:hover {
+        fill: $secondary-color;
+    }
+}
