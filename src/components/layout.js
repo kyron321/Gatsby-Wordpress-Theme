@@ -13,7 +13,7 @@ import Footer from "./footer"
 import "../scss/base/typography.scss"
 import "../scss/base/scroll.scss"
 import "../scss/base/container.scss"
-import '../scss/newsPage.scss';
+import '../scss/newspage.scss';
 import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
