@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import useGetPosts from '../graphql/useGetPosts';
-import '../scss/newsPage.scss';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
