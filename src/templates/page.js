@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import parse, { domToReact } from 'html-react-parser';
 import Banner from '../blocks/banner';
 import TwoColumnImage from "../blocks/two-column-image";
-import * as blocks from '../blocks/map';
+import PostsSlider from "../blocks/posts-slider";
 
 // This is the GraphQL query that fetches the data for a single page
 export const query = graphql`
@@ -14,6 +14,7 @@ export const query = graphql`
       page(id: $id) {
         title
         content
+
       }
     }
   }
@@ -25,6 +26,7 @@ const PageTemplate = ({ data }) => {
   const blockComponents = {
     'register-wordpress-banner-block': Banner,
     'register-wordpress-two-column-image-block': TwoColumnImage,
+    'register-wordpress-posts-slider' : PostsSlider,
     // Add more mappings for other block types
   };
   
