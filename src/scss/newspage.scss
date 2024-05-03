@@ -1,0 +1,30 @@
+.post-container{
+    margin: auto;
+    max-width: 1400px;
+}
+
+.post-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 25px; // Add some padding to the cards
+  }
+  
+  .slider {
+    margin: 20px; // Add some margin to the slider
+  }
+  
+  .post-card .post-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .post-card h2 {
+    margin-top: 20px;
+  }
+  
+  .post-card p {
+    
+  }
