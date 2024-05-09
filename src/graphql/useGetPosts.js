@@ -11,6 +11,7 @@ const useGetPosts = () => {
           date
           content
           slug
+          uri
           featuredImage {
             node {
               mediaItemUrl

@@ -1,19 +1,24 @@
-.post-container{
+@import './base/colors.scss';
+
+.posts-slider-block{
+
+.post-slider-container{
     margin: auto;
     max-width: 1400px;
+}
+
+.post-slider-title{
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .post-card {
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 20px;
     margin-bottom: 20px;
     text-align: center;
-    padding: 25px; // Add some padding to the cards
-  }
-  
-  .slider {
-    margin: 20px; // Add some margin to the slider
+    max-width: 420px;
+    min-height: 575px;
   }
   
   .post-card .post-image {
@@ -24,7 +29,20 @@
   .post-card h2 {
     margin-top: 20px;
   }
-  
-  .post-card p {
-    
-  }
+
+.slick-slide.slick-active div {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-dots li button:before{
+  color: $text-color;
+  opacity: .75;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before{
+  color: $secondary-color;
+  opacity: 1;
+}
+}
