@@ -211,10 +211,10 @@ const StarCanvas = ({ attribs, children }) => {
     }, []);
 
     return (
-        <div className="canvas-container">
-        <canvas ref={canvasRef} className="canvas-2" />
-        <h1 className="star-canvas-title">{title}<span>{subTitle}</span></h1>
-      </div>
+<div className="canvas-container">
+      <canvas ref={canvasRef} className="canvas-2" />
+      <h1 className="star-canvas-title">{title}<span>{subTitle}</span></h1>
+    </div>
     );
 };
 

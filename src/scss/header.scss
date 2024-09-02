@@ -1,8 +1,13 @@
 @import './base/colors.scss';
 
 header {
+  position: fixed; /* Change to fixed position */
+  top: 0;
+  width: 100%; /* Ensure it spans the full width */
   z-index: 999;
-  display: none;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease 0.3s; /* Add transition with delay for visibility */
 }
 
 .header-container {
@@ -35,12 +40,12 @@ header {
 }
 
 .logo-text {
-    margin: 0;
-    transition: transform 0.3s ease; 
+  margin: 0;
+  transition: transform 0.3s ease; 
 }
 
 .logo-text:hover {
-    transform: scale(1.05); 
+  transform: scale(1.05); 
 }
 
 .header-nav {
@@ -78,17 +83,18 @@ header {
 }
 
 .menu-item a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .header-container {
-  position: sticky;
-  top: 0;
   background-color: transparent;
-  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.3s ease;
 
   &.scrolled {
     background-color: $primary-color-darker;
     box-shadow: 2rem rgba(0, 0, 0, 0.6);
+    opacity: 1; /* Make visible when scrolled */
+    visibility: visible; /* Make visible when scrolled */
+    transition-delay: 0s, 0s, 0s; /* No delay for visibility when scrolled */
   }
 }
