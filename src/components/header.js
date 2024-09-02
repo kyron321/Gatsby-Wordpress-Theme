@@ -20,11 +20,23 @@ const Header = ({ siteTitle }) => {
     };
   }, []);
 
+  const websiteOptions = useGetWebsiteOptions();
+
   return (
     <header className={`header-container ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-inner">
         <Link to="/">
-          <img className="logo" src={useGetWebsiteOptions().siteLogo.node.sourceUrl} alt={useGetWebsiteOptions().siteLogo.node.altText}/>
+          {websiteOptions.textOrImageLogo ? (
+            <h1 className="logo-text">
+              {websiteOptions.siteTextLogo}
+            </h1>
+          ) : (
+            <img
+              className="logo"
+              src={websiteOptions.siteLogo.node.sourceUrl}
+              alt={websiteOptions.siteLogo.node.altText}
+            />
+          )}
         </Link>
         <Menu />
       </div>
