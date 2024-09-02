@@ -7,6 +7,7 @@ import parse, { domToReact } from 'html-react-parser';
 import Banner from '../blocks/banner';
 import TwoColumnImage from "../blocks/two-column-image";
 import PostsSlider from "../blocks/posts-slider";
+import StarCanvas from "../blocks/star-canvas";
 
 const FrontPage = () => {
   const data = useGetFrontPage();
@@ -18,6 +19,7 @@ const FrontPage = () => {
     'register-wordpress-banner-block': Banner,
     'register-wordpress-two-column-image-block': TwoColumnImage,
     'register-wordpress-posts-slider' : PostsSlider,
+    'register-wordpress-star-canvas' : StarCanvas,
     // Add more mappings for other block types
   };
 
