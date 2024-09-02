@@ -33,6 +33,15 @@ header {
   width: 100%;
 }
 
+.logo-text {
+    margin: 0;
+    transition: transform 0.3s ease; 
+}
+
+.logo-text:hover {
+    transform: scale(1.05); 
+}
+
 .header-nav {
   display: flex;
 }
