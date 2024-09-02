@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import "../scss/blocks/star-canvas.scss";
 
+// Function to generate a random ID
+function generateRandomId() {
+    return 'section-' + Math.random().toString(36).substr(2, 9);
+}
+
 const StarCanvas = ({ attribs, children }) => {
 
     const titleElement = children.find(child => child.type === 'h2' && child.props.className === 'title');
@@ -9,10 +14,15 @@ const StarCanvas = ({ attribs, children }) => {
     const subTitleElement = children.find(child => child.type === 'h2' && child.props.className === 'sub_title');
     const subTitle = subTitleElement ? subTitleElement.props.children : '';
 
-
     const canvasRef = useRef(null);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
+        const section = sectionRef.current;
+        if (section && !section.id) {
+            section.id = generateRandomId();
+        }
+
         const canvasDots = function () {
             const canvas = canvasRef.current;
             const ctx = canvas.getContext('2d');
@@ -210,11 +220,35 @@ const StarCanvas = ({ attribs, children }) => {
         canvasDots();
     }, []);
 
+    useEffect(() => {
+        const anchors = document.querySelectorAll('a');
+        anchors.forEach(anchor => {
+            const sections = document.querySelectorAll('section');
+            if (sections.length > 1) {
+                const nearestSection = sections[1]; // Skip the first section
+                if (nearestSection && nearestSection.id) {
+                    anchor.href = `#${nearestSection.id}`;
+                    anchor.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        const targetSection = document.getElementById(nearestSection.id);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 125,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    }, []);
+
     return (
-<div className="canvas-container">
-      <canvas ref={canvasRef} className="canvas-2" />
-      <h1 className="star-canvas-title">{title}<span>{subTitle}</span></h1>
-    </div>
+        <section ref={sectionRef} className="canvas-container">
+            <canvas ref={canvasRef} className="canvas-2" />
+            <h1 className="star-canvas-title">{title}<span>{subTitle}</span></h1>
+            <a className='heading-cta'>Find Out More</a>
+        </section>
     );
 };
 

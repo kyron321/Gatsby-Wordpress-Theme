@@ -19,7 +19,7 @@ const FrontPage = () => {
     'register-wordpress-banner-block': Banner,
     'register-wordpress-posts-slider' : PostsSlider,
     'register-wordpress-star-canvas' : StarCanvas,
-    'register-wordpress-two-column-image': TwoColumnImage
+    'register-wordpress-two-column-image': TwoColumnImage,
     // Add more mappings for other block types
   };
 
