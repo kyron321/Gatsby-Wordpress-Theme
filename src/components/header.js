@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={`header-container ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-inner">
-        <Link to="/">
+        {/* <Link to="/">
           {websiteOptions.textOrImageLogo ? (
             <h1 className="logo-text">
               {websiteOptions.siteTextLogo}
@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => {
               alt={websiteOptions.siteLogo.node.altText}
             />
           )}
-        </Link>
+        </Link> */}
         <Menu />
       </div>
     </header>

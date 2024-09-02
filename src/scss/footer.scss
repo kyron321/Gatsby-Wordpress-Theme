@@ -1,18 +1,17 @@
 @import './base/colors.scss';
 
 .footer-container{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     background-color: $primary-color-darker;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
     margin: auto;
     max-width: 1400px;
+    align-items: center;
 }
 
 .socials {
