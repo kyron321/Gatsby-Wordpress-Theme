@@ -1,5 +1,35 @@
 canvas {
     background: #232323;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+  }
+  
+  .canvas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .canvas-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .star-canvas-title {
+    position: relative;
+    z-index: 1;
+    color: white; /* Adjust as needed */
+    text-align: center;
+  
+    span {
+      display: block; /* Make the span start on a new line */
+    }
   }
