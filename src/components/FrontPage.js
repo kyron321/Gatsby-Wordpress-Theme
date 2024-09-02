@@ -5,9 +5,9 @@ import Layout from "../components/layout";
 import { Helmet } from "react-helmet";
 import parse, { domToReact } from 'html-react-parser';
 import Banner from '../blocks/banner';
-import TwoColumnImage from "../blocks/two-column-image";
 import PostsSlider from "../blocks/posts-slider";
 import StarCanvas from "../blocks/star-canvas";
+import TwoColumnImage from '../blocks/two-column-image';
 
 const FrontPage = () => {
   const data = useGetFrontPage();
@@ -17,9 +17,9 @@ const FrontPage = () => {
 
   const blockComponents = {
     'register-wordpress-banner-block': Banner,
-    'register-wordpress-two-column-image-block': TwoColumnImage,
     'register-wordpress-posts-slider' : PostsSlider,
     'register-wordpress-star-canvas' : StarCanvas,
+    'register-wordpress-two-column-image': TwoColumnImage
     // Add more mappings for other block types
   };
 

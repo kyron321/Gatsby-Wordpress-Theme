@@ -62,21 +62,21 @@ const StarCanvas = ({ attribs, children }) => {
                 };
             } else if (windowSize > 800) {
                 dots = {
-                    nb: 300,
+                    nb: 400,
                     distance: 0,
                     d_radius: 0,
                     array: [],
                 };
             } else if (windowSize > 600) {
                 dots = {
-                    nb: 200,
+                    nb: 400,
                     distance: 0,
                     d_radius: 0,
                     array: [],
                 };
             } else {
                 dots = {
-                    nb: 100,
+                    nb: 400,
                     distance: 0,
                     d_radius: 0,
                     array: [],

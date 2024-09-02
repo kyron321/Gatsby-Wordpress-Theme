@@ -1,9 +1,12 @@
 import * as React from "react"
+import "../scss/blocks/two-column-image.scss"
 
-const TwoColumnImage = ({ siteTitle }) => (
- <section className="two-column-image">
-    gatsby two column image
- </section>
-)
+const TwoColumnImage = ({ attribs, children }) => {
+  return (
+    <section className="banner-container">
+      test
+    </section>
+  );
+}
 
-export default TwoColumnImage
+export default TwoColumnImage;
