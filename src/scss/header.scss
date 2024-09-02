@@ -1,69 +1,84 @@
 @import './base/colors.scss';
 
-header{
-    z-index: 999;
-}
-
-.header-container{
-    background-color: $primary-color;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
-}
-
-.header-inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin: auto;
-    max-width: 1400px;
-}
-
-.logo-link {
-    display: block;
-  }
-
-  .logo {
-    height: auto;
-    max-height: 8rem;
-    width: 100%;
-  }
-
-.header-nav{
-    display: flex;
-}
-
-.menu-items{
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu-item{
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.menu-item a{
-    color: $text-color;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
+header {
+  z-index: 999;
 }
 
 .header-container {
-    position: sticky;
-    top: 0;
-    background-color: transparent;
-    transition: background-color 0.15s ease, box-shadow 0.15s ease;
-  
-    &.scrolled {
-      background-color: $primary-color-darker;
-      box-shadow: 2rem rgba(0, 0, 0, 0.6)
-    }
+  background-color: $primary-color;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: auto;
+  max-width: 1400px;
+}
+
+.logo-link {
+  display: block;
+}
+
+.logo {
+  height: auto;
+  max-height: 8rem;
+  width: 100%;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.menu-item a {
+  color: $text-color;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px; /* Adjust the thickness of the underline */
+  bottom: -3px; /* Adjust the position of the underline */
+  left: 0;
+  background-color: $secondary-color; /* Adjust the color of the underline */
+  transition: width 0.3s ease; /* Adjust the duration of the transition */
+}
+
+.menu-item a:hover::after {
+    width: 100%;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  background-color: transparent;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+
+  &.scrolled {
+    background-color: $primary-color-darker;
+    box-shadow: 2rem rgba(0, 0, 0, 0.6);
   }
+}
