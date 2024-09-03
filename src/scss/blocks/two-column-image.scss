@@ -6,31 +6,60 @@
     padding-right: 3rem;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
     .two-column-image-inner-container {
         display: flex;
-        flex-direction: column;
-        max-width: 1400px;
+        flex-direction: row;
     }
 
     .two-column-image-h1 {
         text-align: center;
     }
 
-    .two-column-image-paragraph {
+    .two-column-image-column-one {
+        width: 50%;
+    }
+
+    .two-column-image-column-two {
         width: 50%;
     }
     
-    .grid-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .two-column-image-item-name{
+        margin-bottom: 0;
     }
-    
-    .grid-item img {
+
+    .two-column-image-img{
         width: 3rem;
         height: 3rem;
+    }
+
+    .grid-items{
+        width: fit-content;
+    }
+
+    .grid-item{
+        width: fit-content;
+    }
+
+
+    .two-column-image-column-two .grid-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem; /* Adjust the gap between items as needed */
+    }
+    
+
+    .grid-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .grid-item {
+        width: 30%; /* Adjust the width to fit 3 items per row */
+        margin-bottom: 1rem; /* Adjust the gap between items as needed */
+        text-align: center;
     }
