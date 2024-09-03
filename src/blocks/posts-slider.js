@@ -37,7 +37,7 @@ const PostsSlider = ({ attribs, children }) => {
   return (
     <section className="posts-slider-block">
       <div className='post-slider-container'>
-        <h2 className='post-slider-title'>Latest Posts</h2>
+        <h2 className='post-slider-title'>Projects</h2>
         <Slider {...settings}>
           {posts.slice(0, 4).map((post, index) => {
             const postUrl = new URL(post.uri, siteUrl);

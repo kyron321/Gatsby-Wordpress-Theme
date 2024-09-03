@@ -1,5 +1,5 @@
-.two-column-image-container {
-    background-color: #333333;
+.two-column-image-container.first {
+    background: linear-gradient(to top, #333333, #222222);
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 3rem;
@@ -8,11 +8,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.two-column-image-container {
+    background:#333333;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-column-image-inner-container.text-right{
+    flex-direction: row-reverse;
+
+    .two-column-image-column-one{
+        margin-left: 4rem;
+        margin-right: 0;
+    }
+
+    .two-column-image-column-two{
+        margin-right: 4rem;
+        margin-left: 0;
+        display: flex;
+        justify-content: end;
+    }
 }
 
     .two-column-image-inner-container {
         display: flex;
         flex-direction: row;
+        max-width: 1400px;
     }
 
     .two-column-image-h1 {
@@ -21,10 +52,13 @@
 
     .two-column-image-column-one {
         width: 50%;
+        margin-right: 4rem;
+        text-align: center;
     }
 
     .two-column-image-column-two {
         width: 50%;
+        margin-left: 4rem;
     }
     
     .two-column-image-item-name{
@@ -50,6 +84,10 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem; /* Adjust the gap between items as needed */
     }
+
+    .two-column-image-paragraph{
+        margin-top: 0;
+    }
     
 
     .grid-items {
@@ -59,7 +97,32 @@
     }
     
     .grid-item {
-        width: 30%; /* Adjust the width to fit 3 items per row */
-        margin-bottom: 1rem; /* Adjust the gap between items as needed */
-        text-align: center;
+        opacity: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 160px;
+        border: double 3px transparent;
+        border-image-slice: 1;
+        border-width: 3px;
+        background-image: linear-gradient(#222222, #222222), radial-gradient(circle at top left, #51a2e9, #FF5733);
+        border-radius: 10px;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        overflow: hidden;
+    }
+
+    .two-column-image-item-name {
+        font-size: 1rem;
+        font-weight: 900;
+        color: #eeeeee;
+        text-transform: uppercase;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .two-column-image-img{
+        margin-top: 1rem;
     }

@@ -44,10 +44,26 @@ const TwoColumnImage = ({ attribs, children }) => {
 
     const sectionId = React.useMemo(() => uuidv4(), []);
 
+    const sectionRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (sectionRef.current) {
+            const firstSection = document.querySelector(".two-column-image-container");
+            if (firstSection === sectionRef.current) {
+                sectionRef.current.classList.add("first");
+            }
+        }
+    }, []);
+
+    const innerContainerClasses = ["two-column-image-inner-container"];
+    if (attribs["data-attribute"] === "1") {
+        innerContainerClasses.push("text-right");
+    }
+
     return (
-        <section className="two-column-image-container" id={sectionId}>
+        <section className="two-column-image-container" id={sectionId} ref={sectionRef}>
             <h2 className="two-column-image-h1">{h2Text}</h2>
-            <div className="two-column-image-inner-container">
+            <div className={innerContainerClasses.join(" ")}>
                 <div className="two-column-image-column-one">
                     <p className="two-column-image-paragraph">{pText}</p>
                 </div>
@@ -55,8 +71,8 @@ const TwoColumnImage = ({ attribs, children }) => {
                     <div className="grid-items">
                         {itemNames.map((itemName, index) => (
                             <div key={index} className="grid-item">
-                                <p className="two-column-image-item-name">{itemName}</p>
                                 {images[index] && <img src={images[index]} alt={`Image ${index + 1}`} className="two-column-image-img" />}
+                                <p className="two-column-image-item-name">{itemName}</p>
                             </div>
                         ))}
                     </div>
