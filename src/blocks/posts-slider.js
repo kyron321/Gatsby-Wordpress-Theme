@@ -30,8 +30,10 @@ const PostsSlider = ({ attribs, children }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    swipe: false,
+    autoplaySpeed: 5000,
+    swipe: true,
+    centerMode: true, // Enable center mode
+    centerPadding: '0', // Remove padding around the center slide
   };
 
   return (
@@ -46,8 +48,6 @@ const PostsSlider = ({ attribs, children }) => {
               <div key={post.id || index} className="post-card">
                 <a href={postUrl.href}>
                   {post.featuredImage && post.featuredImage.node && <img className="post-image" src={post.featuredImage.node.mediaItemUrl} alt={post.title} />}
-                  <p>Posted on {new Date(post.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-                  <h3>{post.title}</h3>
                 </a>
               </div>
             );

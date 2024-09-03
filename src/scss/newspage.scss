@@ -1,48 +1,82 @@
 @import './base/colors.scss';
 
-.posts-slider-block{
+.posts-slider-block {
+  background: linear-gradient(to top, #222222, #333333);
+  padding-top: 3rem;
+  padding-bottom: 8rem;
 
-.post-slider-container{
+  .slick-track{
+    height: 480px;
+  }
+
+  .post-slider-container {
     margin: auto;
-    max-width: 1400px;
-}
+    max-width: 1920px;
+  }
 
-.post-slider-title{
+  .post-slider-title {
     text-align: center;
-    margin-bottom: 20px;
-}
+    margin-top: 0;
+  }
 
-.post-card {
+  .post-card {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 20px;
     text-align: center;
-    max-width: 420px;
-    min-height: 575px;
+    max-width: 6800px;
   }
-  
+
   .post-card .post-image {
     width: 100%;
     height: auto;
   }
-  
+
   .post-card h2 {
     margin-top: 20px;
   }
 
-.slick-slide.slick-active div {
+  .slick-slide.slick-active div {
     display: flex;
     justify-content: center;
-}
+  }
 
-.slick-dots li button:before{
-  color: $text-color;
-  opacity: .75;
-  font-size: 10px;
-}
+  .slick-dots li button:before {
+    color: $text-color;
+    opacity: 0.75;
+    font-size: 10px;
+  }
 
-.slick-dots li.slick-active button:before{
-  color: $secondary-color;
-  opacity: 1;
-}
+  .slick-dots li.slick-active button:before {
+    color: $secondary-color;
+    opacity: 1;
+  }
+
+  .slick-slide {
+    transition: transform 0.3s ease, z-index 0.3s ease;
+  }
+
+  .slick-slide.slick-center {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  .slick-slide:not(.slick-center) {
+    transform: scale(1);
+    z-index: 0;
+  }
+  
+  .slick-slide {
+    position: relative; /* Ensure the parent is positioned */
+  }
+  
+  .slick-slide > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%; /* Ensure the child takes the full width of the parent */
+    text-align: center; /* Optional: Center text horizontally */
+  }
+
+
 }
