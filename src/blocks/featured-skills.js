@@ -113,9 +113,8 @@ const FeaturedSkills = ({ attribs, children }) => {
                     {itemNames.map((itemName, index) => {
                         return (
                             <div key={index} className="featured-skill">
-                                <p className="item-name fade-in">{itemName}</p>
                                 <img className="featured-skill-image fade-in" src={images[index]} alt={itemName} />
-                                <p className="item-description fade-in">{itemDescriptions[index]}</p>
+                                <p className="item-name fade-in">{itemName}</p>
                             </div>
                         );
                     })}
