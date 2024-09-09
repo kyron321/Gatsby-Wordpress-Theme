@@ -233,7 +233,7 @@ const StarCanvas = ({ attribs, children }) => {
                         const targetSection = document.getElementById(nearestSection.id);
                         if (targetSection) {
                             window.scrollTo({
-                                top: targetSection.offsetTop - 125,
+                                top: targetSection.offsetTop, // Removed the offset
                                 behavior: 'smooth'
                             });
                         }

@@ -8,6 +8,7 @@ import Banner from '../blocks/banner';
 import PostsSlider from "../blocks/posts-slider";
 import StarCanvas from "../blocks/star-canvas";
 import TwoColumnImage from '../blocks/two-column-image';
+import FeaturedSkills from '../blocks/featured-skills';
 
 const FrontPage = () => {
   const data = useGetFrontPage();
@@ -20,6 +21,7 @@ const FrontPage = () => {
     'register-wordpress-posts-slider' : PostsSlider,
     'register-wordpress-star-canvas' : StarCanvas,
     'register-wordpress-two-column-image': TwoColumnImage,
+    'register-wordpress-featured-skills': FeaturedSkills,
     // Add more mappings for other block types
   };
 

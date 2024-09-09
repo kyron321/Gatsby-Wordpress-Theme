@@ -5,6 +5,47 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useStaticQuery, graphql } from 'gatsby';
 
+const CustomPrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', zIndex: 1, cursor: 'pointer', left: '-25px', background: 'none' }} // Customize the style
+      onClick={onClick}
+    >
+      <div style={{
+        width: '48px',
+        height: '48px',
+        borderTop: '6px solid white',
+        borderRight: '6px solid white',
+        transform: 'rotate(-135deg)',
+        margin: '0 auto'
+      }} />
+    </div>
+  );
+};
+
+const CustomNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', zIndex: 1, cursor: 'pointer', right: '-25px', background: 'none' }} // Customize the style
+      onClick={onClick}
+    >
+      <div style={{
+
+        width: '48px',
+        height: '48px',
+        borderTop: '6px solid white',
+        borderRight: '6px solid white',
+        transform: 'rotate(45deg)',
+        margin: '0 auto'
+      }} />
+    </div>
+  );
+};
+
 const PostsSlider = ({ attribs, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -24,7 +65,7 @@ const PostsSlider = ({ attribs, children }) => {
   const posts = useGetPosts();
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 100,
     slidesToShow: 3,
@@ -34,6 +75,8 @@ const PostsSlider = ({ attribs, children }) => {
     swipe: true,
     centerMode: true, // Enable center mode
     centerPadding: '0', // Remove padding around the center slide
+    prevArrow: <CustomPrevArrow />, // Custom previous arrow
+    nextArrow: <CustomNextArrow /> // Custom next arrow
   };
 
   return (
@@ -48,6 +91,9 @@ const PostsSlider = ({ attribs, children }) => {
               <div key={post.id || index} className="post-card">
                 <a href={postUrl.href}>
                   {post.featuredImage && post.featuredImage.node && <img className="post-image" src={post.featuredImage.node.mediaItemUrl} alt={post.title} />}
+                  <div className="overlay">
+                    <h3>{post.title}</h3>
+                  </div>
                 </a>
               </div>
             );
