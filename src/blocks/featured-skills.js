@@ -21,9 +21,8 @@ const findItemDescription = (children) => {
     let itemDescriptions = [];
     React.Children.forEach(children, child => {
         if (React.isValidElement(child)) {
-            console.log('Processing child:', child);
+
             if (child.type === 'p' && child.props.className === 'item-description') {
-                console.log('Found item description:', child.props.children);
                 itemDescriptions.push(child.props.children);
             }
             if (child.props.children) {
@@ -50,7 +49,6 @@ const findImages = (children) => {
 };
 
 const FeaturedSkills = ({ attribs, children }) => {
-    console.log('Children:', children);
     const h2Element = children.find(child => child.type === 'h2');
     const h2Text = h2Element ? h2Element.props.children : '';
 

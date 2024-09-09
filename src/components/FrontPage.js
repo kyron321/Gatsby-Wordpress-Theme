@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import useGetFrontPage from '../graphql/useGetFrontPage';
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -13,6 +13,8 @@ import TwoColumnCard from '../blocks/two-column-card';
 
 const FrontPage = () => {
   const data = useGetFrontPage();
+  const sectionsRef = useRef([]);
+  const currentSectionIndex = useRef(0);
 
   // Find the object where isFrontPage is true
   const page = data.find(item => item.isFrontPage);
@@ -34,12 +36,38 @@ const FrontPage = () => {
   
       const BlockComponent = blockComponents[attribs.id];
       if (BlockComponent) {
-        return <BlockComponent attribs={attribs} children={domToReact(children, options)} />;
+        const sectionClass = attribs.class || `section-${sectionsRef.current.length}`;
+        sectionsRef.current.push(sectionClass);
+        return <div className={sectionClass}><BlockComponent attribs={attribs} children={domToReact(children, options)} /></div>;
       }
     },
   };
-  
 
+  useEffect(() => {
+    const handleScroll = (event) => {
+      event.preventDefault();
+      const delta = Math.sign(event.deltaY);
+      if (delta !== 0) {
+        currentSectionIndex.current = Math.min(
+          Math.max(currentSectionIndex.current + delta, 0),
+          sectionsRef.current.length - 1
+        );
+        const nextSection = document.querySelector(`.${sectionsRef.current[currentSectionIndex.current]}`);
+        if (nextSection) {
+          window.scrollTo({
+            top: nextSection.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, []);
 
   return (
     <>
