@@ -79,18 +79,43 @@ const FeaturedSkills = ({ attribs, children }) => {
         innerContainerClasses.push("text-right");
     }
 
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const blocks = document.querySelectorAll('.fade-in');
+        blocks.forEach(block => {
+            observer.observe(block);
+        });
+
+        return () => {
+            blocks.forEach(block => {
+                observer.unobserve(block);
+            });
+        };
+    }, []);
+
     return (
         <section className={innerContainerClasses.join(' ')} id={sectionId} ref={sectionRef}>
             <div className="featured-skills-inner-container">
-                <h2 className="featured-skills-h2">{h2Text}</h2>
-                <h3 className="featured-skills-h3">{pText}</h3>
+                <h2 className="featured-skills-h2 fade-in">{h2Text}</h2>
+                <h3 className="featured-skills-h3 fade-in">{pText}</h3>
                 <div className="featured-skills">
                     {itemNames.map((itemName, index) => {
                         return (
                             <div key={index} className="featured-skill">
-                                <p className="item-name">{itemName}</p>
-                                <img className="featured-skill-image" src={images[index]} alt={itemName} />
-                                <p className="item-description">{itemDescriptions[index]}</p>
+                                <p className="item-name fade-in">{itemName}</p>
+                                <img className="featured-skill-image fade-in" src={images[index]} alt={itemName} />
+                                <p className="item-description fade-in">{itemDescriptions[index]}</p>
                             </div>
                         );
                     })}

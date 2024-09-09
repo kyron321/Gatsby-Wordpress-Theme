@@ -49,3 +49,21 @@
     }
 
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1; /* Fade in */
+}
