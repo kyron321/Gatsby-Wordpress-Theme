@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import CanvasBackground from "./CanvasBackground"
 import "../scss/base/typography.scss"
 import "../scss/base/scroll.scss"
 import "../scss/base/container.scss"
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
       <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" as="style" />
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
       </Helmet>
+      <CanvasBackground />
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
         <main className="main-container">{children}</main>  
     </>
