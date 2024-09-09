@@ -11,6 +11,7 @@
     height: 100vh;
 
     .website-link{
+        margin-top: 3rem;
         position: relative;
         display: flex;
         text-align: center;
@@ -37,7 +38,7 @@
         transform-origin: bottom left;
         transform: scaleX(0) scaleY(1);
         transition: transform 0.1s ease-out;
-        z-index: -1; /* Ensure the pseudo-element is behind the text */
+        z-index: -1;
       }
       
       .website-link:hover::before {
@@ -46,6 +47,22 @@
       
       .website-link:hover {
         color: #fff;
+      }
+
+      .two-column-card-img{
+        max-width: 65rem;
+        height: auto;
+        width: 100%;
+      }
+
+      .two-column-card-h1{
+        margin-bottom: 1rem;
+      }
+
+      .two-column-card-paragraph{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        margin-top: 0;
       }
 }
 
