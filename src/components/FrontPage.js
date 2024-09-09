@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import useGetFrontPage from '../graphql/useGetFrontPage';
 import { graphql } from "gatsby";
+import Footer from './footer';
 import Layout from "../components/layout";
 import { Helmet } from "react-helmet";
 import parse, { domToReact } from 'html-react-parser';
@@ -44,6 +45,9 @@ const FrontPage = () => {
   };
 
   useEffect(() => {
+    // Add footer to sectionsRef
+    sectionsRef.current.push('footer-container');
+
     const handleScroll = (event) => {
       event.preventDefault();
       const delta = Math.sign(event.deltaY);
@@ -70,7 +74,7 @@ const FrontPage = () => {
   }, []);
 
   return (
-    <>
+<>
       <Helmet>
         <title>{page.title}</title>
         <meta name="description" content={page.title}/>
@@ -78,7 +82,8 @@ const FrontPage = () => {
       <div>
         {typeof page.content === 'string' ? parse(page.content, options) : null}
       </div>
-    </>
+      <Footer />
+      </>
   );
 };
 

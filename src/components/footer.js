@@ -9,7 +9,7 @@ const Footer = () => {
   const socials = useGetSocials();
 
   return (
-    <footer className="footer-container">
+    <footer className="footer-container" id="footer-id">
       <div className="footer-inner">
       <div className="copyright">
           &copy; {new Date().getFullYear()} Kyron Smith. All rights reserved.
