@@ -39,50 +39,45 @@ const CanvasBackground = () => {
       if (windowSize > 1600) {
         dots = {
           nb: 500,
-          distance: 0,
-          d_radius: 0,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
       } else if (windowSize > 1300) {
         dots = {
-          nb: 575,
-          distance: 0,
-          d_radius: 0,
+          nb: 500,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
       } else if (windowSize > 1100) {
         dots = {
           nb: 500,
-          distance: 0,
-          d_radius: 0,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
       } else if (windowSize > 800) {
         dots = {
-          nb: 400,
-          distance: 0,
-          d_radius: 0,
+          nb: 500,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
-        ctx.globalAlpha = 0;
       } else if (windowSize > 600) {
         dots = {
-          nb: 300,
-          distance: 0,
-          d_radius: 0,
+          nb: 500,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
-
-        ctx.globalAlpha = 0;
       } else {
         dots = {
-          nb: 300,
-          distance: 0,
-          d_radius: 0,
+          nb: 500,
+          distance: 100,
+          d_radius: 150,
           array: [],
         };
-
-        ctx.globalAlpha = 0;
       }
 
       function Dot() {
@@ -167,10 +162,10 @@ const CanvasBackground = () => {
         }
         dots.array[0].radius = 1.5;
         dots.array[0].colour = '#51a2e9';
-        dot.animate();
+        dots.array[0].animate();
       }
 
-      window.onscroll = function (parameter) {
+      window.onscroll = function () {
         mousePosition.x = Math.random() * canvas.width;
         mousePosition.y = Math.random() * canvas.height;
       };
