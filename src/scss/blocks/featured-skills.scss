@@ -9,8 +9,8 @@
         display: flex;
         flex-direction: column;
         max-width: 1920px;
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .featured-skills-h2{
@@ -21,12 +21,19 @@
         margin-top: 0rem;
     }
 
-    .featured-skills{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    .featured-skills {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 1 row, 6 columns */
+        gap: 2rem;
         margin-top: 3rem;
+    
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr); /* 2 rows, 3 columns */
+        }
+    
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr); /* 3 rows, 2 columns */
+        }
     }
 
     .featured-skill{
@@ -79,6 +86,18 @@
         text-align: center;
         .featured-skills-h2{
             
+        }
+        .featured-skills-h3{
+            margin-top: 0rem;
+            font-size: 1rem;
+        }
+        .featured-skills{
+            margin-top: 1.5rem;
+            gap: 8px;
+        }
+
+        .item-name{
+            margin-bottom: 1.5rem;
         }
     }
 
