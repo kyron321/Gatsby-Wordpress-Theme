@@ -81,13 +81,14 @@ ul {
     padding: 0;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   h1 {
     font-size: 2rem;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
   }
 
   h3 {

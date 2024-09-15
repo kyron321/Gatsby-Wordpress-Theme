@@ -91,3 +91,13 @@
   .email{
     text-align: center;
   }
+
+  @media screen and (max-width: 768px){
+    .contact-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+  }
