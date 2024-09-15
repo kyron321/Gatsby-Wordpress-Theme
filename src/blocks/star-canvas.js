@@ -221,7 +221,8 @@ const StarCanvas = ({ attribs, children }) => {
     }, []);
 
     useEffect(() => {
-        const anchors = document.querySelectorAll('a');
+        const anchors = Array.from(document.querySelectorAll('a.heading-cta'))
+  .filter(anchor => anchor.textContent.trim() === 'Find Out More');
         anchors.forEach(anchor => {
             const sections = document.querySelectorAll('section');
             if (sections.length > 1) {

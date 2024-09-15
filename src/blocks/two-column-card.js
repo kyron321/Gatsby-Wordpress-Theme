@@ -86,7 +86,7 @@ const TwoColumnCard = ({ attribs, children }) => {
                 </div>
             </div>
             {websiteLink && (
-                <a href={websiteLink.href} className="website-link">
+                <a target="_blank" href={websiteLink.href} className="website-link">
                     {websiteLink.text}
                 </a>
             )}
