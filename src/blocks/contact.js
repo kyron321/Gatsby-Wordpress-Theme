@@ -26,27 +26,27 @@ const Contact = ({ attribs, children }) => {
     console.log(findItemNames(children));
 
     return (
-        <section className="contact-container" id={sectionId} ref={sectionRef}>
-          <div className="contact-content">
-            <h2 className="contact-h2">Contact Me</h2>
-            <p className="email">Please feel free to send over any questions or opportunities to <a href={`mailto:${email}`}>{email}</a>, or use the form below.</p>
-            <form action="" method="POST">
-              <div>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter Name" required />
-              </div>
-              <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter Email" required />
-              </div>
-              <div>
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Enter Message" required></textarea>
-              </div>
-              <button type="submit">Send</button>
-            </form>
+      <section className="contact-container" id={sectionId} ref={sectionRef}>
+      <div className="contact-content">
+        <h2 className="contact-h2">Contact Me</h2>
+        <p className="email">Please feel free to send over any questions or opportunities to <a href={`mailto:${email}`}>{email}</a>, or use the form below.</p>
+        <form action="https://formspree.io/f/xjkbdpwk" method="POST">
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required />
           </div>
-        </section>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required />
+          </div>
+          <div>
+            <label htmlFor="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter Message" required></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
       );
 }
 
