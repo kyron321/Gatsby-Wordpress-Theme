@@ -69,24 +69,50 @@ const TwoColumnCard = ({ attribs, children }) => {
         innerContainerClasses.push("text-right");
     }
 
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const blocks = document.querySelectorAll('.fade-in');
+        blocks.forEach(block => {
+            observer.observe(block);
+        });
+
+        return () => {
+            blocks.forEach(block => {
+                observer.unobserve(block);
+            });
+        };
+    }, []);
+
     return (
-        <section className="two-column-card-container" id={sectionId} ref={sectionRef}>
-            <h2 className="two-column-card-h1">{h2Text}</h2>
+        <section className="two-column-card-container fade-in" id={sectionId} ref={sectionRef}>
+            <h2 className="two-column-card-h1 fade-in">{h2Text}</h2>
             <div className={innerContainerClasses.join(" ")}>
                 <div className="two-column-card-column-one">
-                    <p className="two-column-card-paragraph">{pText}</p>
+                    <p className="two-column-card-paragraph fade-in">{pText}</p>
                 </div>
                 <div className="two-column-card-column-two">
-                    {image && <img src={image} alt="Two Column Card Image" className="two-column-card-img" />}
+                    {image && <img src={image} alt="Two Column Card Image" className="two-column-card-img fade-in" />}
                     {itemNames.map((itemName, index) => (
-                        <div key={index} className="two-column-card-item">
+                        <div key={index} className="two-column-card-item fade-in">
                             <p className="item-name">{itemName}</p>
                         </div>
                     ))}
                 </div>
             </div>
             {websiteLink && (
-                <a target="_blank" href={websiteLink.href} className="website-link">
+                <a target="_blank" href={websiteLink.href} className="website-link fade-in">
                     {websiteLink.text}
                 </a>
             )}
