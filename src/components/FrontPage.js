@@ -45,40 +45,40 @@ const FrontPage = () => {
     },
   };
 
-  useEffect(() => {
-    // Add footer to sectionsRef
-    sectionsRef.current.push('footer-container');
+  // useEffect(() => {
+  //   // Add footer to sectionsRef
+  //   sectionsRef.current.push('footer-container');
   
-    let debounceTimeout;
+  //   let debounceTimeout;
   
-    const handleScroll = (event) => {
-      event.preventDefault();
-      clearTimeout(debounceTimeout);
-      debounceTimeout = setTimeout(() => {
-        const delta = Math.sign(event.deltaY);
-        if (delta !== 0) {
-          currentSectionIndex.current = Math.min(
-            Math.max(currentSectionIndex.current + delta, 0),
-            sectionsRef.current.length - 1
-          );
-          const nextSection = document.querySelector(`.${sectionsRef.current[currentSectionIndex.current]}`);
-          if (nextSection) {
-            window.scrollTo({
-              top: nextSection.offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        }
-      }, 50); // Adjust the debounce delay as needed
-    };
+  //   const handleScroll = (event) => {
+  //     event.preventDefault();
+  //     clearTimeout(debounceTimeout);
+  //     debounceTimeout = setTimeout(() => {
+  //       const delta = Math.sign(event.deltaY);
+  //       if (delta !== 0) {
+  //         currentSectionIndex.current = Math.min(
+  //           Math.max(currentSectionIndex.current + delta, 0),
+  //           sectionsRef.current.length - 1
+  //         );
+  //         const nextSection = document.querySelector(`.${sectionsRef.current[currentSectionIndex.current]}`);
+  //         if (nextSection) {
+  //           window.scrollTo({
+  //             top: nextSection.offsetTop,
+  //             behavior: 'smooth'
+  //           });
+  //         }
+  //       }
+  //     }, 50); // Adjust the debounce delay as needed
+  //   };
   
-    window.addEventListener('wheel', handleScroll, { passive: false });
+  //   window.addEventListener('wheel', handleScroll, { passive: false });
   
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-      clearTimeout(debounceTimeout);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('wheel', handleScroll);
+  //     clearTimeout(debounceTimeout);
+  //   };
+  // }, []);
 
   return (
 <>
